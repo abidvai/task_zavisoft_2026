@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:task_26/core/navigation/app_route.dart';
 
+/// --- This searchDelegate is responsible for showing the search bar static and also the profile icon
 class SearchBarDelegate extends SliverPersistentHeaderDelegate {
   final TextEditingController queryController;
   final double topPadding;
@@ -9,10 +13,10 @@ class SearchBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(
-      BuildContext context,
-      double shrinkOffset,
-      bool overlapsContent,
-      ) {
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     return Container(
       padding: EdgeInsets.fromLTRB(20.w, topPadding, 20.w, 0),
       decoration: BoxDecoration(
@@ -41,7 +45,18 @@ class SearchBarDelegate extends SliverPersistentHeaderDelegate {
             ),
           ),
           SizedBox(width: 6.w),
-          CircleAvatar(),
+
+          /// using dummy network image from pixels website then clicked go to profile picture
+          GestureDetector(
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(
+                'https://images.pexels.com/photos/4028398/pexels-photo-4028398.jpeg',
+              ),
+            ),
+            onTap: () {
+              Get.toNamed(AppRoute.profile);
+            },
+          ),
         ],
       ),
     );

@@ -16,6 +16,7 @@ dependencies:
   http: ^1.6.0
   flutter_screenutil: ^5.9.3
   google_fonts:
+  flutter_secure_storage: ^8.0.0
 
 dev_dependencies:
   flutter_test:

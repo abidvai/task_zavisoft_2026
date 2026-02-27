@@ -37,6 +37,7 @@ class ProductModel {
         rating: rating ?? this.rating,
       );
 
+  /// factory constructor to parsing the json map to dart class
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
     id: json["id"],
     title: json["title"],

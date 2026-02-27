@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../core/spacing/app_spacing.dart';
 import '../../../model/product_model.dart';
 
 class ProductCard extends StatelessWidget {
@@ -34,7 +35,7 @@ class ProductCard extends StatelessWidget {
             height: 100.h,
             fit: BoxFit.contain,
           ),
-          SizedBox(width: 20.w),
+          SizedBox(height: AppSpacing.medium.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
